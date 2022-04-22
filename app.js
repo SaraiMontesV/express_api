@@ -26,6 +26,15 @@ app.get('/v1/explorers/:id', (req, res)=>{
     res.status(200).json(explorer1)
 })
 
+app.post('/v1/explorers', (req, res)=>{
+    console.log(`POST explorers V1 API ${new Date()}`)
+    const explorer1 = {id: 1, name: 'Sara'}   
+    // Agregar la lógica para persistir
+    console.log(req.body)
+    res.status(201).json({message: "Creado con éxito"})
+})
+
+
 
 // Con esto inicializamos esta app
 app.listen(port, () => {
