@@ -34,12 +34,18 @@ app.post('/v1/explorers', (req, res)=>{
 })
 
 
-app.put('/v1/explorers', (req, res)=>{
+app.put('/v1/explorers/:id', (req, res)=>{
     console.log(`PUT explorers V1 API ${new Date()}`)
     // Agregar la lógica para actualizar
     console.log(req.body)
     console.log(req.params.id) // query params
     res.status(201).json({message: "Actualizado con éxito"})
+})
+
+app.delete('/v1/explorers/:id', (req, res)=>{
+    console.log(`DELETE explorers V1 API ${new Date()}`)
+     // Agregar la lógica para eliminar el registro enviado
+    res.status(200).json({message: "Eliminado con éxito"})
 })
 
 
